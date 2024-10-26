@@ -15,6 +15,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter{
                 writer.write(entry.getKey() + " : " + entry.getValue() + "\n");
                 writer.newLine();
             }
+            System.out.println("Symptoms written to file");
         }catch (IOException e){
             e.printStackTrace();
         }
