@@ -17,7 +17,7 @@ public class AnalyticsCounter {
 	 * @param reader the reader to read symptom data
 	 * @param writer the writer to write symptom data
 	 */
-	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer){
+	public AnalyticsCounter(final ISymptomReader reader, final ISymptomWriter writer){
 		AnalyticsCounter.reader = reader;
 		AnalyticsCounter.writer = writer;
 	}
@@ -37,7 +37,7 @@ public class AnalyticsCounter {
 	 * @param symptomsList a list of symptoms
 	 * @return a map of symptoms and their corresponding occurrences
 	 */
-	public  Map<String,Integer> countSymptom(List<String> symptomsList){
+	public  Map<String,Integer> countSymptom(final List<String> symptomsList){
 
         return symptomsList.stream()
                 .collect(Collectors.toMap(
@@ -55,7 +55,7 @@ public class AnalyticsCounter {
 	 * @param symptomsMap a map of symptoms and their occurrences
 	 * @return a sorted map of symptoms and their corresponding occurrences
 	 */
-	public  Map<String,Integer> sortSymptom(Map<String, Integer> symptomsMap){
+	public  Map<String,Integer> sortSymptom(final Map<String, Integer> symptomsMap){
 
         return new TreeMap<>(symptomsMap);
 	}
@@ -65,7 +65,7 @@ public class AnalyticsCounter {
 	 *
 	 * @param symptomsMap a map of symptoms and their occurrences
 	 */
-	public void writeSymptoms(Map<String,Integer>symptomsMap){
+	public void writeSymptoms(final Map<String,Integer>symptomsMap){
 		writer.writeSymptoms(symptomsMap);
 	}
 }

@@ -11,15 +11,16 @@ import java.util.stream.Collectors;
  * optimize implementation for reading symptom data from a file.
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
+	private static final String BASE_PATH ="src/resources/";
 	private final String filePath;
 	
 	/**
 	 * Constructor to initialize the file path.
 	 *
-	 * @param filePath a full or partial path to file with symptom strings in it, one per line
+	 * @param fileName the name of the file and his extension containing symptom strings, one per line
 	 */
-	public ReadSymptomDataFromFile (String filePath) {
-		this.filePath = filePath;
+	public ReadSymptomDataFromFile (final String fileName) {
+		this.filePath = BASE_PATH + fileName;
 	}
 
 	/**
